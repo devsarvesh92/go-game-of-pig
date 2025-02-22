@@ -7,12 +7,13 @@ import (
 )
 
 type Player struct {
+	name            string
 	score           int
 	playingStrategy strategy.PlayingStrategy
 }
 
-func NewPlayer(playingStrategy strategy.PlayingStrategy) *Player {
-	return &Player{playingStrategy: playingStrategy, score: 0}
+func NewPlayer(name string, playingStrategy strategy.PlayingStrategy) *Player {
+	return &Player{name: name, playingStrategy: playingStrategy, score: 0}
 }
 
 func (player *Player) Roll() int {
@@ -22,7 +23,7 @@ func (player *Player) Roll() int {
 		if roll == 1 {
 			return totalScore
 		}
-		if player.playingStrategy.ShouldHold(player.score) {
+		if player.playingStrategy.ShouldHold(totalScore) {
 			return totalScore
 		}
 		totalScore += roll

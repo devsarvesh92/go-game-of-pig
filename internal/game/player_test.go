@@ -10,7 +10,7 @@ import (
 
 func TestPlayer(t *testing.T) {
 	playingStratey := strategy.NewFixedStrategy(10)
-	player := game.NewPlayer(playingStratey)
+	player := game.NewPlayer("abc", playingStratey)
 	score := player.Roll()
 
 	// set score
