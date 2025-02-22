@@ -26,7 +26,7 @@ func (game Game) Play() *Player {
 			score := player.Roll()
 			player.AddScore(score)
 			if player.TotalScore() >= game.target {
-				fmt.Println("Winner of game", player.name)
+				fmt.Println("Winner of game", player.Name)
 				return player
 			}
 		}

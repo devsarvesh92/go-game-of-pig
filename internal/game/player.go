@@ -7,13 +7,13 @@ import (
 )
 
 type Player struct {
-	name            string
-	score           int
+	Name            string
+	Score           int
 	playingStrategy strategy.PlayingStrategy
 }
 
 func NewPlayer(name string, playingStrategy strategy.PlayingStrategy) *Player {
-	return &Player{name: name, playingStrategy: playingStrategy, score: 0}
+	return &Player{Name: name, playingStrategy: playingStrategy, Score: 0}
 }
 
 func (player *Player) Roll() int {
@@ -31,13 +31,13 @@ func (player *Player) Roll() int {
 }
 
 func (player *Player) TotalScore() int {
-	return player.score
+	return player.Score
 }
 
 func (player *Player) ResetScore() {
-	player.score = 0
+	player.Score = 0
 }
 
 func (player *Player) AddScore(score int) {
-	player.score += score
+	player.Score += score
 }
