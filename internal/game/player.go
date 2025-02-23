@@ -41,3 +41,7 @@ func (player *Player) ResetScore() {
 func (player *Player) AddScore(score int) {
 	player.Score += score
 }
+
+func (player *Player) GetHoldingValue() int {
+	return player.playingStrategy.GetHoldingValue()
+}

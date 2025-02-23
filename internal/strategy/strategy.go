@@ -2,6 +2,7 @@ package strategy
 
 type PlayingStrategy interface {
 	ShouldHold(score int) bool
+	GetHoldingValue() int
 }
 
 type FixedStrategy struct {
@@ -16,4 +17,8 @@ func NewFixedStrategy(holdingScore int) *FixedStrategy {
 // Attach method to strcut
 func (fixedStrategy FixedStrategy) ShouldHold(score int) bool {
 	return score >= fixedStrategy.holdingValue
+}
+
+func (fixedStrategy FixedStrategy) GetHoldingValue() int {
+	return fixedStrategy.holdingValue
 }
